@@ -7,7 +7,7 @@ LABEL org.opencontainers.image.title="Hello Docker Learners!" \
       org.opencontainers.image.authors="@nigelpoulton"
 
 RUN adduser -D -u 1001 USER
-USER 1001
+
 # Create directory in container image for app code
 RUN mkdir -p /usr/src/app
 
@@ -19,6 +19,8 @@ WORKDIR /usr/src/app
 
 # Install dependencies from packages.json
 RUN npm install
+
+USER 1001
 
 # Command for container to execute
 ENTRYPOINT [ "node", "app.js" ]
