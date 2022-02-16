@@ -20,7 +20,5 @@ WORKDIR /usr/src/app
 # Install dependencies from packages.json
 RUN npm install
 
-USER 1001
-
 # Command for container to execute
 ENTRYPOINT [ "node", "app.js" ]
